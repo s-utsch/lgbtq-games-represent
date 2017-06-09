@@ -168,7 +168,7 @@ function dsPieChart(){
 		   // for animation
 		   innerRadiusFinal = outerRadius * .5,
 		   innerRadiusFinal3 = outerRadius* .45,
-		   color = d3.scale.ordinal().range(["#d40606", "#ee9c00", "#e3ff00", "#06bf00", "#001a98", "#800080"])    //builtin range of colors
+		   color = d3.scale.ordinal().range(["#800080", "#001a98", "#06bf00", "#e3ff00", "#ee9c00", "#d40606"])    //builtin range of colors
 		   ;
 	    
 	var vis = d3.select("#pieChart")
@@ -342,7 +342,7 @@ function dsBarChartBasics() {
 		var margin = {top: 30, right: 5, bottom: 20, left: 50},
 		width = 500 - margin.left - margin.right,
 	   	height = 250 - margin.top - margin.bottom,
-		colorBar = d3.scale.ordinal().range(["#d40606", "#ee9c00", "#e3ff00", "#06bf00", "#001a98", "#800080"]),
+		colorBar = d3.scale.ordinal().range(["#800080", "#001a98", "#06bf00", "#e3ff00", "#ee9c00", "#d40606"]),
 		barPadding = 1
 		;
 		
