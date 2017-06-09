@@ -2,7 +2,7 @@
 <html>
   <head>    
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>Testing Pie Chart</title>
+    <title>LGBTQ+ Dashboard</title>
    <!--<script type="text/javascript" src="d3/d3.v2.js"></script>-->
     <script src="http://d3js.org/d3.v2.js"></script>
 	<!-- Note: I made good use of the sample code provided by the D3JS community and extended it to fit my needs to create this simple dashboard -->
@@ -35,9 +35,10 @@
 
 .slice {
    font-size: 12pt;
-   font-family: Verdana;
+   font-family: Monaco;
    fill: white; //svg specific - instead of color
    font-weight: bold;	
+   text-shadow: 0px 0px 10px #000000;
   		} 
 
 /*for line chart*/
@@ -66,21 +67,22 @@
 }
 
 .title {
-	 font-family: Verdana;
+	 font-family: Monaco;
     font-size: 15px;	
 		
 }
 
 .xAxis {
-    font-family: verdana;
+    font-family: Monaco;
     font-size: 11px;
     fill: black;
 }  
 
 .yAxis {
-    font-family: verdana;
+    font-family: Monaco;
     font-size: 11px;
     fill: white;
+    text-shadow: 0px 0px 4px #000000;
 }
 
   
@@ -98,17 +100,17 @@ td {
 }
 
 #lineChartTitle1 {
-	font-family: Verdana;
-	font-size  : 14px;
-	fill       : lightgrey;
+	font-family: Monaco;
+	font-size  : 12px;
+	fill       : black;
 	font-weight: bold;
 	text-anchor: middle;
 }
 
 #lineChartTitle2 {
-	font-family: Verdana;
+	font-family: Monaco
 	font-size  : 72px;
-	fill       : grey;
+	fill       : black;
 	text-anchor: middle;
 	font-weight: bold;
 	/*font-style: italic;*/
@@ -166,7 +168,7 @@ function dsPieChart(){
 		   // for animation
 		   innerRadiusFinal = outerRadius * .5,
 		   innerRadiusFinal3 = outerRadius* .45,
-		   color = d3.scale.category20()    //builtin range of colors
+		   color = d3.scale.ordinal().range(["#d40606", "#ee9c00", "#e3ff00", "#06bf00", "#001a98", "#800080"])    //builtin range of colors
 		   ;
 	    
 	var vis = d3.select("#pieChart")
@@ -339,8 +341,8 @@ function dsBarChartBasics() {
 
 		var margin = {top: 30, right: 5, bottom: 20, left: 50},
 		width = 500 - margin.left - margin.right,
-	   height = 250 - margin.top - margin.bottom,
-		colorBar = d3.scale.category20(),
+	   	height = 250 - margin.top - margin.bottom,
+		colorBar = d3.scale.ordinal().range(["#d40606", "#ee9c00", "#e3ff00", "#06bf00", "#001a98", "#800080"]),
 		barPadding = 1
 		;
 		
@@ -362,7 +364,7 @@ function dsBarChart() {
 	
 	var margin = basics.margin,
 		width = basics.width,
-	   height = basics.height,
+	   	height = basics.height,
 		colorBar = basics.colorBar,
 		barPadding = basics.barPadding
 		;
@@ -489,7 +491,7 @@ function updateBarChart(group, colorChosen) {
 	
 		var margin = basics.margin,
 			width = basics.width,
-		   height = basics.height,
+		   	height = basics.height,
 			colorBar = basics.colorBar,
 			barPadding = basics.barPadding
 			;
@@ -854,19 +856,19 @@ function dsLineChart() {
 	    
 	var plot = svg
 	    .append("g")
-	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+	    .attr("transform", "translate(" + margin.left + "," + (margin.top-5) + ")")
 	    .attr("id", "lineChartPlot")
 	    ;
 
 		/* descriptive titles as part of plot -- start */
 	var dsLength=firstDatasetLineChart.length;
 
-	plot.append("text")
+	/*plot.append("text")
 		.text(firstDatasetLineChart[dsLength-1].measure)
 		.attr("id","lineChartTitle2")
 		.attr("x",width/2)
 		.attr("y",height/2)	
-		;
+		;*/
 	/* descriptive titles -- end */
 	    
 	plot.append("path")
