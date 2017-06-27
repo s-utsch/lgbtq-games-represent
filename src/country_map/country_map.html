@@ -1,0 +1,93 @@
+<html>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+	<script src="http://datamaps.github.io/scripts/0.4.4/datamaps.world.min.js"></script>
+	<div id="container" style="position: relative; width: 100%; height: 100%;"></div>
+	<script>
+		function f_radius(area){
+			return Math.sqrt(area/Math.PI)*5
+		}
+		var bubble_map = new Datamap({
+		  element: document.getElementById("container"),
+		  geographyConfig: {
+			popupOnHover: false,
+			highlightOnHover: false
+		  },
+		  fills: {
+			defaultFill: '#ABDDA4',
+		  }
+		});
+		
+		bubble_map.bubbles([
+		  {
+		    quantity: 1,
+			radius: f_radius(1),			
+			centered: 'AUS'			
+		  },
+		  {
+		    quantity: 1,
+			radius: f_radius(11),			
+			centered: 'BEL'			
+		  },
+		  {
+		    quantity: 57,
+			radius: f_radius(57),			
+			centered: 'CAN'			
+		  },
+		  {
+		    quantity: 10,
+			radius: f_radius(10),			
+			centered: 'FRA'			
+		  },
+		  {
+		    quantity: 14,
+			radius: f_radius(14),			
+			centered: 'DEU'			
+		  },
+		  {
+		    quantity: 15,
+			radius: f_radius(15),			
+			centered: 'ITA'			
+		  },
+		  {
+		    quantity: 253,
+			radius: f_radius(253),			
+			centered: 'JPN'			
+		  },
+		  {
+		    quantity: 1,
+			radius: f_radius(1),			
+			centered: 'NOR'			
+		  },
+		  {
+		    quantity: 2,
+			radius: f_radius(2),			
+			centered: 'POL'			
+		  },
+		  {
+	        quantity: 2,	
+			radius: f_radius(2),			
+			centered: 'KOR'			
+		  },
+		  {
+  		  	quantity: 6,
+			radius: f_radius(6),			
+			centered: 'ESP'			
+		  },
+		  {
+		  	quantity: 98,
+			radius: f_radius(98),			
+			centered: 'GBR'			
+		  },
+		  {
+		  	quantity: 311,
+			radius: f_radius(311),			
+			centered: 'USA'			
+		  },
+		], {
+		  popupTemplate: function(geo, data) {
+			return '<div class="hoverinfo">Quantidade Jogos ('+data.centered+'): ' + data.quantity
+		  }
+		});
+	</script>
+</html>
