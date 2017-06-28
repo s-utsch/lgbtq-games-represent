@@ -63,17 +63,17 @@
             g = svg.append("g").attr("transform", "translate(20,0)");       // move right 20px.
 
     // x-scale and x-axis
-    var experienceName = ["", "1: Few","2: Some","3: Many","4: Lots","5: Loads"];
+    var experienceName = ["", "(1) Few","(2) Some","(3) Many","(4) Lots","(5) Loads"];
     var formatSkillPoints = function (d) {
-        return experienceName[d % 5];
+        return experienceName[d % 6];
     }
     var xScale =  d3.scaleLinear()
-            .domain([0,5])
+            .domain([0,6])
             .range([0, 400]);
 
     var xAxis = d3.axisTop()
             .scale(xScale)
-            .ticks(5)
+            .ticks(20)
             .tickFormat(formatSkillPoints);
 
     // Setting up a way to handle the data
@@ -82,13 +82,13 @@
             .separation(function separate(a, b) {
                 return a.parent == b.parent            // 2 levels tree grouping for category
                 || a.parent.parent == b.parent
-                || a.parent == b.parent.parent ? 0.4 : 0.8;
+                || a.parent == b.parent.parent ? 0.25 : 1.6;
             });
 
     var stratify = d3.stratify()            // This D3 API method gives cvs file flat data array dimensions.
             .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
 
-    d3.csv("skillsdata.csv", row, function(error, data) {
+    d3.csv("genredata.csv", row, function(error, data) {
         if (error) throw error;
 
         var root = stratify(data);
@@ -102,7 +102,7 @@
                 .attr("d", function(d) {
                     return "M" + d.y + "," + d.x
                             + "C" + (d.parent.y + 100) + "," + d.x
-                            + " " + (d.parent.y + 100) + "," + d.parent.x
+                            + " " + (d.parent.y + 200) + "," + d.parent.x
                             + " " + d.parent.y + "," + d.parent.x;
                 });
 
@@ -131,7 +131,7 @@
                 .attr("rx", 2)
                 .attr("ry", 2)
                 .transition()
-                    .duration(800)
+                    .duration(1300)
                     .attr("width", function (d) {return xScale(d.data.value);});
 
         leafNodeG.append("text")
@@ -216,7 +216,7 @@
         }
         function handleMouseOut() {
             var leafG = d3.select(this);
-
+            
             leafG.select("rect")
                     .attr("stroke-width","0");
         }
