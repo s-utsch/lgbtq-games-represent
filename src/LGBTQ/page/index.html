@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>The LGBTQ Archive</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage very simple demo." />
+	<meta name="keywords"  content="fullpage,jquery,demo,simple" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="../jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+
+<style>
+
+h1 {
+	color: white;
+ -webkit-text-stroke: 2px black;
+}
+
+h2{
+	color: white;
+	font-size: 45px;
+	-webkit-text-stroke: 2px black;
+}
+
+h3{
+	color: white;
+	font-size: 30px;
+	-webkit-text-stroke: 2px black;
+}
+
+body{
+	font-family: Monaco;
+}
+
+#section0{
+	background-image: -webkit-linear-gradient(left, #f44336 0%, #f44336 14.28571%, #f4e636 14.28571%, #f4e636 28.57143%, #5ff436 28.57143%, #5ff436 42.85714%, #36f4b0 42.85714%, #36f4b0 57.14286%, #3696f4 57.14286%, #3696f4 71.42857%, #7936f4 71.42857%, #7936f4 85.71429%, #f436cc 85.71429%, #f436cc 100%, #f44336 100%, #f44336 114.28571%);
+  background-image: linear-gradient(90deg, #f44336 0%, #f44336 14.28571%, #f4e636 14.28571%, #f4e636 28.57143%, #5ff436 28.57143%, #5ff436 42.85714%, #36f4b0 42.85714%, #36f4b0 57.14286%, #3696f4 57.14286%, #3696f4 71.42857%, #7936f4 71.42857%, #7936f4 85.71429%, #f436cc 85.71429%, #f436cc 100%, #f44336 100%, #f44336 114.28571%);
+}
+
+#section1
+{
+	background-image: url(imgs/GAMEBG3.jpeg);
+}
+
+#section2
+{
+	/*background-image: url(imgs/OCEAN.jpg);*/
+	background-color: blue;
+}
+
+</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="../jquery.fullPage.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+        anchors: ['title', 'games', 'countries', 'wordcloud', 'contenttypes', 'dashboard', 'genreandsexuality', 'streamgraph', 'homophobia', 'explicity'],
+				sectionsColor: ['#ff99ff', '#ffffcc', '#cef1fb', '#f2f2f2', '#f2f2f2'],
+			  continuousVertical: true,
+        autoScrolling: false,
+				// scrollOverflow: true,
+				navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: ['Title', 'Games', 'Countries', 'Content', 'Content Types',
+				'Overview', 'Genre & Sexuality', 'Gender & Sexuality Through Time', 'Homophobia & Transphobia', 'Explicity & Implicity']
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	<div class="section active" id="section0"><h1>The LGBTQ Video Game Archive</h1></div>
+	<div class="section" id="section1">
+	<h1 color="white">861 GAMES </h1>
+	<h2>~1986 to 2016~</h2>
+	</div>
+	
+	<div class="section" id="section2">
+	<!-- COUNTRIES -->
+	<h2>14 countries</h2>
+			<iframe src="worldmap.html" width= "400%" height="800" frameborder = 0></iframe>	
+	</div>
+
+	<div class="section" id="section3">
+	<!-- CONTENT WORDCLOUD -->
+	</div>
+	
+	<div class="section" id="section4">
+	<!-- CONTENT TYPES -->
+	</div>
+
+	<div class="section" id="section5"><h2>Overview</h2>
+	<!-- DASHBOARD -->
+			<iframe src="dashboard.html" width= "100%" height=450 frameborder = 0></iframe>	
+	</div>
+	
+	<div class="section" id="section6"><h2>Game Genre & Sexuality</h2>
+	<!-- DENDOGRAM -->
+		<iframe src="dendogram.html" width= "600%" height=2000 frameborder = 0></iframe>	
+	</div>	
+	
+	<div class="section" id="section7"><h2>Gender & Sexuality Through Time</h2>
+	<!-- STREAMGRAPH -->
+			<iframe src="streamgraph.html" width= "80%" height=600 frameborder = 0></iframe>	
+	</div>
+
+	<div class="section" id="section10"><h2>Homophobia & Transphobia</h2>
+	<!-- HOMOPHOBIA vs TRANSPHOBIA  -->
+	</div>
+	
+	<div class="section" id="section8"><h2>Explicity</h2>
+	<!-- EXPLICIT vs IMPLICIT -->
+			<h3>By Country</h3>
+			<iframe src="diversebar_country.html" width= "100%" height=600 frameborder = 0></iframe>
+			<h3>By Year</h3>
+			<iframe src="diversebar_year.html" width= "100%" height=600 frameborder = 0></iframe>		
+	</div>
+	
+	<div class="section" id="section11"><h1></h1>
+	<!--  -->
+	</div>
+</div>
+
+</body>
+</html>
