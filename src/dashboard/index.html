@@ -484,7 +484,8 @@ dsBarChart();
 /* updates bar chart on request */
 
 function updateBarChart(group, colorChosen) {
-	
+		if (Cgroup==group && group!="All") { group = "All"; colorChosen = "#d3d3d3";}
+		Cgroup = group;
 		var currentDatasetBarChart = datasetBarChosen(group);
 		
 		var basics = dsBarChartBasics();
@@ -793,8 +794,9 @@ var datasetLineChart = [
 ;
 
 // set initial category value
+var Cgroup = "All";
 var group = "All";
-
+var CLgroup = "All";
 function datasetLineChartChosen(group) {
 	var ds = [];
 	for (x in datasetLineChart) {
@@ -906,10 +908,11 @@ dsLineChart();
 
 
  /* ** UPDATE CHART ** */
- 
+
 /* updates bar chart on request */
 function updateLineChart(group, colorChosen) {
-
+        if (CLgroup==group && group!="All") { group = "All"; colorChosen = "#d3d3d3";}
+		CLgroup = group;
 	var currentDatasetLineChart = datasetLineChartChosen(group);   
 
 	var basics = dsLineChartBasics();
