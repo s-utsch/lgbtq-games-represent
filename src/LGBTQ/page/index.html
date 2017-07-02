@@ -50,6 +50,31 @@
 	body{
 		font-family: Monaco;
 	}
+
+	#dendframe{
+		 -moz-transform: scale(0.75, 0.75); 
+		  -webkit-transform: scale(0.75, 0.75); 
+		  -o-transform: scale(0.75, 0.75);
+		  -ms-transform: scale(0.75, 0.75);
+		  transform: scale(0.75, 0.75); 
+		  -moz-transform-origin: top left;
+		  -webkit-transform-origin: top left;
+		  -o-transform-origin: top left;
+		  -ms-transform-origin: top left;
+		  transform-origin: top left;
+	}
+	#chordframe{
+		 -moz-transform: scale(0.65, 0.65); 
+		  -webkit-transform: scale(0.65, 0.65); 
+		  -o-transform: scale(0.65, 0.65);
+		  -ms-transform: scale(0.65, 0.65);
+		  transform: scale(0.65, 0.65); 
+		  -moz-transform-origin: top left;
+		  -webkit-transform-origin: top left;
+		  -o-transform-origin: top left;
+		  -ms-transform-origin: top left;
+		  transform-origin: top left;
+	}
 	
 
 	#section0{
@@ -77,15 +102,14 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('#fullpage').fullpage({
-	        anchors: ['title', 'games', 'countries', 'wordcloud', 'contenttypes', 'dashboard', 'genreandsexuality', 'streamgraph', 'homophobia', 'explicity'],
-					sectionsColor: ['#ff99ff', '#baffc9', '#baffc9', '#bae1ff', '#ede7e1','#ffffba','#bae1ff','#ffffff','#c0edc9', '#ffdfba'],
+	        anchors: ['title', 'games', 'countries', 'wordcloud', 'contenttypes', 'dashboard', 'genreandsexuality', 'streamgraph', 'homophobia', 'explicity','sets'],
+					sectionsColor: ['#ff99ff', '#baffc9', '#baffc9', '#bae1ff', '#ede7e1','#ffffba','#bae1ff','#ffffff','#c0edc9', '#ffdfba','#ffffff'],
 				  continuousVertical: true,
 	        autoScrolling: false,
 					// scrollOverflow: true,
 					navigation: true,
 					navigationPosition: 'right',
-					navigationTooltips: ['Title', 'Games', 'Countries', 'Content', 'Content Types',
-					'Overview', 'Genre & Sexuality', 'Through Time', 'Homophobia & Transphobia', 'Explicity & Implicity']
+					navigationTooltips: ['Title', 'Games', 'Countries', 'Content', 'Content Types', 'Overview', 'Genre & Sexuality', 'Through Time', 'Homophobia & Transphobia', 'Explicity & Implicity','Sets']
 				});
 			});
 		</script>
@@ -106,9 +130,9 @@
 		<div class="section" id="section2">
 		<!-- COUNTRIES -->
 		<h2>14 countries</h2>
-		<div style="margin: 0 auto;
-			width: 70%;">
-				<iframe src="worldmap.html" width= "100%" height="700" frameborder=0></iframe>	</div>
+		<div style="margin: 0 auto;width: 70%;">
+			<iframe src="worldmap.html" width= "100%" height="700" frameborder=0></iframe>
+		</div>
 		</div>
 
 		<div class="section" id="section3">
@@ -121,16 +145,14 @@
 		<div class="section" id="section4">
 		<!-- CONTENT TYPES -->
 			<h2>Content Types</h2>
-			<div style="margin: 0 auto;
-			width: 70%;">
+			<div style="margin: 0 auto;width: 70%;">
 			<iframe src="funnel.html" width= "100%" height=550 frameborder = 0></iframe>	</div>
 		</div>
 
 		<div class="section" id="section5">
 		<h2>Representativeness Overview</h2>
 		<!-- DASHBOARD -->
-				<div style="margin: 0 auto;
-			width: 70%;">
+				<div style="margin: 0 auto;width: 70%;">
 				<iframe src="dashboard.html" width= "100%" height=450 frameborder = 0></iframe>	
 				</div>
 		</div>
@@ -138,9 +160,8 @@
 		<div class="section" id="section6">
 		<h2>Game Genre & Sexuality</h2>
 		<!-- DENDOGRAM -->
-				<div style="margin: 0 auto;
-			width: 80%;">
-			<iframe src="dendogram.html" width= "100%" height=1200 frameborder = 0></iframe>	</div>
+				<div style="margin: 0 auto;width: 75%;">
+			<iframe id=dendframe src="dendrogram.html" width= "100%" height=1200 frameborder = 0></iframe>	</div>
 		</div>	
 		
 		<div class="section" id="section7">
@@ -152,8 +173,7 @@
 		<div class="section" id="section10">
 		<h2>Homophobia & Transphobia</h2>
 		<!-- HOMOPHOBIA vs TRANSPHOBIA  -->
-			<div style="margin: 0 auto;
-			width: 70%;">
+			<div style="margin: 0 auto;width: 70%;">
 				<iframe src="piecharts.html" width= "100%" height=600 frameborder = 0></iframe>	</div>
 		</div>
 		
@@ -161,15 +181,18 @@
 		<h2>Explicity</h2>
 		<!-- EXPLICIT vs IMPLICIT -->
 				<h2>By Country</h2>
-						<div style="margin: 0 auto;
-			width: 80%;">
+						<div style="margin: 0 auto;width: 80%;">
 				<iframe src="diversebar_country.html" width= "100%" height=600 frameborder = 0></iframe>
 				</div>
 				<h2>By Year</h2>
-						<div style="margin: 0 auto;
-			width: 80%;">
+						<div style="margin: 0 auto;width: 80%;">
 				<iframe src="diversebar_year.html" width= "100%" height=600 frameborder = 0></iframe>	
 				</div>	
+		</div>
+		<div class="section" id="section9">
+			<h2>Representativiness Sets</h2>
+		<div style="margin: 0 auto;width: 80%;">
+				<iframe src="chord.html" id="chordframe" scrolling="no" width= "100%" height=400 frameborder=0></iframe>	</div>
 		</div>
 	</div>
 
