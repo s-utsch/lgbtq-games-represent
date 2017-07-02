@@ -194,7 +194,7 @@ html.fp-enabled,
     position: absolute;
     top: -2px;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 22px;
     font-family: Monaco;
     white-space: nowrap;
     max-width: 220px;
@@ -204,7 +204,7 @@ html.fp-enabled,
     width: 0;
     cursor: pointer;
     
-    -webkit-text-stroke: 0.5px black;
+    -webkit-text-stroke: 0.25px black;
 }
 #fp-nav ul li:hover .fp-tooltip,
 #fp-nav.fp-show-active a.active + .fp-tooltip {

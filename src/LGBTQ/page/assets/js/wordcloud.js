@@ -6,8 +6,10 @@ function shuffle(a) {
 }
       var colors = ["#0000ff", "#400080", "#800080", "#800040", "#ff00ff"];
       shuffle(colors);
+      var wcWidth=800;
+      var wcHeight=400;
       d3.wordcloud().font("arial black")
-        .size([600, 400])
+        .size([wcWidth, wcHeight])
         .fill(d3.scale.ordinal().range(colors))
         .words(words)
         .start(); 
