@@ -1,53 +1,57 @@
-data = [
-  ["Characters",   525],
-  ["Relationships & Romance", 93],
-  ["Actions & Locations",  37],
-  ["Mentions & Narratives",        30],
-  ["Others", 17]
-];
+ var width = 800,
+                height = 450,
+                radius = Math.min(width, height) / 2;
 
-var chart = new D3Funnel("#funnel");
+            var color = d3.scale.ordinal()
+                .range(["#88d8ea",
+                                "#99fbcc",
+                                "#f9f5a8",
+                                "#eecdab",
+                                "#f4b4b4",
+                                "rgb(144,197,345)",
+                                "rgb(165,218,366)"]);
 
-var options = {
+            var svg = d3.select("body").append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
 
-    // width of the chart; 
-    // defaults to container's width (if non-zero)
-    width: 350,    
-    
-    // height of the chart; 
-    // defaults to container's height (if non-zero)
-    height: 400,
-
-    // The percent of total width the bottom should be
-    bottomWidth: 1/3, 
-    
-    // How many sections to pinch
-    bottomPinch: 0,  
-    
-    // Whether the funnel is curved
-    isCurved: false,   
-    
-    // The curvature amount
-    curveHeight: 20,      
-
-    // Either "solid" or "gradient"
-    fillType: "solid",    
-
-    // Whether the funnel is inverted
-    isInverted: false,  
-    
-    // Whether the funnel has effects on hover
-    hoverEffects: false,  
-
-    // Whether the funnel should calculate the blocks by
-    // the count values rather than equal heights
-    dynamicArea: false ,  
-                          
-    label: {
-
-        // Any valid font size
-        fontSize: "14px"  
-    }
-};
-
-chart.draw(data, options);
+            d3.csv("./data/funnel_data.csv", function(error, data) {
+                var funnel = d3.funnel()
+                    .size([width,height])
+                    .value(function(d) { return d.value; });
+               
+                var line = d3.svg.line()
+                    .interpolate('linear-closed')
+                    .x(function(d,i) { return d.x; })
+                    .y(function(d,i) { return d.y; });
+                
+                var g = svg.selectAll(".funnel-group")
+                    .data(funnel(data))
+                    .enter().append("g")
+                    .attr("class", "funnel-group");
+        
+                g.append("path")
+                    .attr("d", function (d){ return line(d.coordinates); })
+                    .style("fill", function(d) { return color(d.content_type); });
+        
+                g.append("text")
+                    .attr({
+                        "y": function (d,i) {
+                            if(d.coordinates.length === 4) {
+                                return (((d.coordinates[0].y-d.coordinates[1].y)/2)+d.coordinates[1].y) + 5;
+                            } else {
+                                return (d.coordinates[0].y + d.coordinates[1].y)/2 + 10;
+                            }
+                        },
+                        "x": function (d,i) { return width/2;}
+                    })
+                    .style("text-anchor", "middle")
+                    .text(function(d) { return String(d.content_type)});
+            
+                d3.select("body").append("table")
+                    .attr({
+                        "id" : "footer",
+                        "width": width + "px"
+                    })
+            });

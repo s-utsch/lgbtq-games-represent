@@ -1,130 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>    
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>LGBTQ+ Dashboard</title>
-   <!--<script type="text/javascript" src="d3/d3.v2.js"></script>-->
-    <script src="http://d3js.org/d3.v2.js"></script>
-	<!-- Note: I made good use of the sample code provided by the D3JS community and extended it to fit my needs to create this simple dashboard -->
-    <style type="text/css">
-
-
-#pieChart {    
-	position:absolute;
-	top:10px;
-	left:10px;
-	width:400px;
-	height: 400px; 
-}
-
-
-
-#lineChart {    
-	position:absolute;
-	top:10px;
-	left:410px;
-	height: 150px;
-}
-
-#barChart {
-	position:absolute;
-	top:160px;
-	left:410px;
-	height: 250px;
-}
-
-.slice {
-   font-size: 12pt;
-   font-family: Monaco;
-   fill: white; //svg specific - instead of color
-   font-weight: bold;	
-   text-shadow: 0px 0px 10px #000000;
-  		} 
-
-/*for line chart*/
-.axis path, .axis line {
-    fill: none;
-    stroke: black;
-    shape-rendering: crispEdges; //The shape-rendering property is an SVG attribute, used here to make sure our axis and its tick mark lines are pixel-perfect. 
-}
-
-.line {
-  fill: none;
-  /*stroke: steelblue;*/
-  stroke-width: 3px;
-}
-
-.dot {
-  /*fill: white;*/
-  /*stroke: steelblue;*/
-  stroke-width: 1.5px;
-  }
-				
-
-.axis text {
-    font-family: Verdana;
-    font-size: 11px;
-}
-
-.title {
-	 font-family: Monaco;
-    font-size: 15px;	
-		
-}
-
-.xAxis {
-    font-family: Monaco;
-    font-size: 11px;
-    fill: black;
-}  
-
-.yAxis {
-    font-family: Monaco;
-    font-size: 11px;
-    fill: white;
-    text-shadow: 0px 0px 4px #000000;
-}
-
-  
-table {
-	border-collapse:collapse;
-	border: 0px;	
-	font-family: Verdana;	
-	color: #5C5558;
-	font-size: 12px;
-	text-align: right;			
-}
-
-td {
-	padding-left: 10px;		
-}
-
-#lineChartTitle1 {
-	font-family: Monaco;
-	font-size  : 12px;
-	fill       : black;
-	font-weight: bold;
-	text-anchor: middle;
-}
-
-#lineChartTitle2 {
-	font-family: Monaco
-	font-size  : 72px;
-	fill       : black;
-	text-anchor: middle;
-	font-weight: bold;
-	/*font-style: italic;*/
-}
-				 
-    </style>
-  </head>
-  <body>
-  
-    <div id="pieChart"></div>
-    <div id="barChart"></div>  
-    <div id="lineChart"></div>
-    <script type="text/javascript">
-    
 /*
 ################ FORMATS ##################
 -------------------------------------------
@@ -168,7 +41,7 @@ function dsPieChart(){
 		   // for animation
 		   innerRadiusFinal = outerRadius * .5,
 		   innerRadiusFinal3 = outerRadius* .45,
-		   color = d3.scale.ordinal().range(["#800080", "#001a98", "#06bf00", "#e3ff00", "#ee9c00", "#d40606"])    //builtin range of colors
+		   color = d3.scale.ordinal().range(["#800080", "#06bf00", "#001a98", "#e3ff00", "#ee9c00", "#d40606"])    //builtin range of colors
 		   ;
 	    
 	var vis = d3.select("#pieChart")
@@ -979,7 +852,3 @@ function updateLineChart(group, colorChosen) {
 	   ;  
 
 }
-
-    </script>
-  </body>
-</html>
