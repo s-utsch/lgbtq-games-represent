@@ -31,7 +31,7 @@
 	}
 	
 	h4{
-		color: white;
+		color: pink;
 		font-size: 45px;
 		text-align: center;
 	}
@@ -48,7 +48,7 @@
 
 
 	body{
-		font-family: Monaco;
+		font-family: Impact;
 	}
 
 	#dendframe{
@@ -109,7 +109,7 @@
 					// scrollOverflow: true,
 					navigation: true,
 					navigationPosition: 'right',
-					navigationTooltips: ['Title', 'Games', 'Countries', 'Content', 'Content Types', 'Overview', 'Genre & Sexuality', 'Through Time', 'Homophobia & Transphobia', 'Explicity & Implicity','Sets']
+					navigationTooltips: ['Title', 'Games', 'Countries', 'Content', 'Content Types', 'Overview', 'Genre & Sexuality', 'Through Time', 'Homo & Transphobia', 'Explicity','Sets']
 				});
 			});
 		</script>
@@ -119,7 +119,8 @@
 
 	<div id="fullpage">
 		<div class="section active" id="section0">
-			<h1>The LGBTQ Video Game Archive</h1>
+			<h1>Visualizing the</h1>
+			<h1>LGBTQ Video Game Archive</h1>
 		</div>
 
 		<div class="section" id="section1">
@@ -137,20 +138,20 @@
 
 		<div class="section" id="section3">
 		<!-- CONTENT WORDCLOUD -->
-		<h2>Content</h2>
+		<h6>Observed Content</h6>
                 <div style="margin: 0 auto;width: 70%;">
 			<iframe src="wordcloud.html" width= "100%" height=500 frameborder = 0></iframe>	</div>
 		</div>
 		
 		<div class="section" id="section4">
 		<!-- CONTENT TYPES -->
-			<h2>Content Types</h2>
+			<h5>Types of Content</h5>
 			<div style="margin: 0 auto;width: 70%;">
 			<iframe src="funnel.html" width= "100%" height=550 frameborder = 0></iframe>	</div>
 		</div>
 
 		<div class="section" id="section5">
-		<h2>Representativeness Overview</h2>
+		<h6>Overview</h6>
 		<!-- DASHBOARD -->
 				<div style="margin: 0 auto;width: 70%;">
 				<iframe src="dashboard.html" width= "100%" height=450 frameborder = 0></iframe>	
@@ -158,39 +159,40 @@
 		</div>
 		
 		<div class="section" id="section6">
-		<h2>Game Genre & Sexuality</h2>
+		<h6>Game Genre & Sexuality</h6>
 		<!-- DENDOGRAM -->
 				<div style="margin: 0 auto;width: 75%;">
-			<iframe id=dendframe src="dendrogram.html" width= "100%" height=1200 frameborder = 0></iframe>	</div>
+			<iframe id=dendframe src="dendrogram.html" width= "100%" height=1150 frameborder = 0></iframe>	</div>
 		</div>	
 		
 		<div class="section" id="section7">
-		<h2>Gender & Sexuality Through Time</h2>
+		<h4>Gender & Sexuality Through Time</h4>
 		<!-- STREAMGRAPH -->
 				<iframe src="streamgraph.html" width= "90%" height=500 frameborder = 0></iframe>	
 		</div>
 
 		<div class="section" id="section10">
-		<h2>Homophobia & Transphobia</h2>
+		<h6>Homophobia & Transphobia</h6>
 		<!-- HOMOPHOBIA vs TRANSPHOBIA  -->
 			<div style="margin: 0 auto;width: 70%;">
-				<iframe src="piecharts.html" width= "100%" height=600 frameborder = 0></iframe>	</div>
+				<iframe src="piecharts.html" width= "100%" height=400 frameborder = 0></iframe>	</div>
 		</div>
 		
 		<div class="section" id="section8">
-		<h2>Explicity</h2>
+		<h6>Explicity</h6>
 		<!-- EXPLICIT vs IMPLICIT -->
-				<h2>By Country</h2>
+				<h5>By Country</h5>
 						<div style="margin: 0 auto;width: 80%;">
 				<iframe src="diversebar_country.html" width= "100%" height=600 frameborder = 0></iframe>
 				</div>
-				<h2>By Year</h2>
+				<h5>By Year</h5>
 						<div style="margin: 0 auto;width: 80%;">
 				<iframe src="diversebar_year.html" width= "100%" height=600 frameborder = 0></iframe>	
 				</div>	
 		</div>
+
 		<div class="section" id="section9">
-			<h2>Representativiness Sets</h2>
+			<h6>Representation Sets</h6>
 		<div style="margin: 0 auto;width: 80%;">
 				<iframe src="chord.html" id="chordframe" scrolling="no" width= "100%" height=400 frameborder=0></iframe>	</div>
 		</div>
