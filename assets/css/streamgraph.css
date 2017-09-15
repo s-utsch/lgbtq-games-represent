@@ -1,0 +1,28 @@
+body {
+  font: 10px Monaco;
+  font-weight: bold;
+}
+
+.chart { 
+  background: #fff;
+}
+
+p {
+  font: 15px Monaco;
+  text-shadow: 0 0 1px #0000FF;
+  font-weight: bold;
+}
+
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+
+button {
+  position: absolute;
+  right: 50px;
+  top: 10px;
+}
