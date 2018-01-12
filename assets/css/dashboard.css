@@ -23,11 +23,12 @@
 }
 
 .slice {
-   font-size: 12pt;
-   font-family: Monaco;
+   font-size: 10pt;
+   font-family: 'Oswald', sans-serif;
    fill: white; //svg specific - instead of color
    font-weight: bold;	
-   text-shadow: 0px 0px 10px #000000;
+   text-transform: uppercase;
+   -webkit-font-smoothing: antialiased;
   		} 
 
 /*for line chart*/
@@ -51,56 +52,63 @@
 				
 
 .axis text {
-    font-family: Verdana;
-    font-size: 11px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
 }
 
 .title {
-	 font-family: Monaco;
-    font-size: 15px;	
+	width:10px;
+	font-family: 'Oswald', sans-serif;
+    font-size: 12px;	
+	
+	text-anchor: middle;
+	text-transform:uppercase;
+
+}
 		
 }
 
 .xAxis {
-    font-family: Monaco;
-    font-size: 11px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
     fill: black;
 }  
+.barbase {
+	font-size: 8pt; 
+	font-family: 'Oswald', sans-serif;
+	
+	/*text-transform:uppercase;*/
+    fill: black;
 
+}  
 .yAxis {
-    font-family: Monaco;
+    font-family: Helvetica;
     font-size: 11px;
     fill: white;
-    text-shadow: 0px 0px 4px #000000;
+    
 }
 
   
 table {
 	border-collapse:collapse;
-	border: 0px;	
-	font-family: Verdana;	
+	border: 12px;	
+	font-family: 'Oswald', sans-serif;
 	color: #5C5558;
 	font-size: 12px;
-	text-align: right;			
+	text-align: right;	
+	text-transform: uppercase;
 }
 
-td {
-	padding-left: 10px;		
-}
+
 
 #lineChartTitle1 {
-	font-family: Monaco;
+	font-family: 'Oswald', sans-serif;
 	font-size  : 12px;
 	fill       : black;
-	font-weight: bold;
+	
 	text-anchor: middle;
+	text-transform: uppercase;
 }
 
-#lineChartTitle2 {
-	font-family: Monaco
-	font-size  : 72px;
-	fill       : black;
-	text-anchor: middle;
-	font-weight: bold;
-	/*font-style: italic;*/
+/*font-style: italic;*/
 }

@@ -1,7 +1,8 @@
 body {
-  font: 14px Monaco;
+    font-size: 12px;
+    font-family: 'Oswald', sans-serif;
+	text-transform:uppercase;
 }
-
 .axis path,
 .axis line {
   fill: none;

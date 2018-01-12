@@ -6,6 +6,7 @@
 
     // x-scale and x-axis
     var experienceName = ["", "(1) Few","(2) Some","(3) Many","(4) Lots","(5) Loads"];
+	
     var formatSkillPoints = function (d) {
         return experienceName[d % 6];
     }

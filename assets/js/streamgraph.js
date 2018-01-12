@@ -6,7 +6,7 @@ var colorrange = [];
 function chart(csvpath, color) {
 
 if (color == "gay") {
-  colorrange = ["#d40606", "#ee9c00", "#e3ff00", "#06bf00", "#001a98", "#800080"];
+  colorrange = ["#d40606", "#ff8400", "#ffda05", "#06bf00", "#001a98", "#800080"];
 }
 else if (color == "pink") {
   colorrange = ["#980043", "#DD1C77", "#DF65B0", "#C994C7", "#D4B9DA", "#F1EEF6"];
@@ -14,11 +14,11 @@ else if (color == "pink") {
 else if (color == "orange") {
   colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84", "#FDD49E", "#FEF0D9"];
 }
-strokecolor = "#000000";
+strokecolor = "#FFFFFF";
 
 var format = d3.time.format("%Y");
 
-var margin = {top: 20, right: 40, bottom: 30, left: 30};
+var margin = {top: 40, right: 25, bottom: 40, left: 40};
 var width = document.body.clientWidth - margin.left - margin.right;
 var height = 400 - margin.top - margin.bottom;
 
