@@ -1,9 +1,12 @@
 body {
-  font: 20px sans-serif;
+    font-size: 12px;
+    font-family: 'Oswald', sans-serif;
+	text-transform:uppercase;
+	  font-weight:300;
 }
 
 svg text{
-  fill:grey;
+  fill:black;
   font-size:21px;
 }
 svg .values text{

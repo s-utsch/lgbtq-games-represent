@@ -21,8 +21,16 @@ var yAxis = d3.svg.axis()
     
 /--AQUI muda a cor das barras--/
 var color = d3.scale.ordinal()
-	.range(["#4169E1", "#228B22"]);
-
+	.range(["#0048ff", "#73078e"]);
+	
+	//vermelho: #e21a00
+			//laranja: #fd8e00
+			//amarelo: #ffde00
+			//verde: #18800d
+			//azul: #0048ff
+			//roxo: #73078e
+	
+	
 var svg = d3.select('body').append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -71,11 +79,11 @@ d3.csv("./data/data_diversebar_country.csv", function(error, data) {
       .attr("transform", function(d) { return "translate(0," + y(d.rows) + ")"; })
       .on("mouseover", function(d) {
         svg.selectAll('.y').selectAll('text').filter(function(text) { return text===d.rows; })
-            .transition().duration(100).style('font','17px Monaco');
+            .transition().duration(100).style('font','17px Oswald');
       })
       .on("mouseout", function(d) {
         svg.selectAll('.y').selectAll('text').filter(function(text) { return text===d.rows; })
-            .transition().duration(100).style('font','14px Monaco');
+            .transition().duration(100).style('font','14px Oswald');
       });
 
   var bars = rows.selectAll("rect")

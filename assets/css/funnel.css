@@ -1,7 +1,22 @@
 body {
-    font: 12px sans-serif;
-    font-family: Monaco;
+    font-size: 12px;
+    font-family: 'Oswald', sans-serif;
+	text-transform:uppercase;
+	fill:black;
+	
 }
 .arc path {
     stroke: #fff;
+}
+
+@font-face {
+   
+
+    font-family: 'Oswald', sans-serif;
+
+    font-family: 'Roboto Slab', serif;
+
+    font-family: 'Lobster', cursive;
+
+
 }

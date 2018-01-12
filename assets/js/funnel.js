@@ -1,15 +1,14 @@
  var width = 800,
-                height = 450,
+                height = 500,
                 radius = Math.min(width, height) / 2;
 
             var color = d3.scale.ordinal()
-                .range(["#88d8ea",
-                                "#99fbcc",
-                                "#f9f5a8",
-                                "#eecdab",
-                                "#f4b4b4",
-                                "rgb(144,197,345)",
-                                "rgb(165,218,366)"]);
+                .range(["#e21a00",
+                                "#fd8e00",
+                                "#ffde00",
+                                "#18800d",
+                                "#0048ff",
+                                "#73078e"]);
 
             var svg = d3.select("body").append("svg")
                 .attr("width", width)
@@ -55,3 +54,12 @@
                         "width": width + "px"
                     })
             });
+			
+			
+			
+			//vermelho: #e21a00
+			//laranja: #fd8e00
+			//amarelo: #ffde00
+			//verde: #18800d
+			//azul: #0048ff
+			//roxo: #73078e

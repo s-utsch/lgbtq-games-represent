@@ -23,6 +23,8 @@ var 	formatAsPercentage = d3.format("%"),
 
 
 function dsPieChart(){
+	
+	
 
 	var dataset = [
 			{category: "Gay", measure: 0.381516587678},
@@ -41,9 +43,16 @@ function dsPieChart(){
 		   // for animation
 		   innerRadiusFinal = outerRadius * .5,
 		   innerRadiusFinal3 = outerRadius* .45,
-		   color = d3.scale.ordinal().range(["#800080", "#06bf00", "#001a98", "#e3ff00", "#ee9c00", "#d40606"])    //builtin range of colors
+		   color = d3.scale.ordinal().range(["#e21a00", "#73078e", "#0048ff", "#ffde00", "#fd8e00", "#18800d"])    //builtin range of colors
 		   ;
 	    
+		//vermelho: #e21a00
+			//laranja: #fd8e00
+			//amarelo: #ffde00
+			//verde: #18800d
+			//azul: #0048ff
+			//roxo: #73078e
+			
 	var vis = d3.select("#pieChart")
 	     .append("svg:svg")              //create the SVG element inside the <body>
 	     .data([dataset])                   //associate our data with the document
@@ -107,7 +116,7 @@ function dsPieChart(){
 		vis.append("svg:text")
 	     	.attr("dy", ".35em")
 	      .attr("text-anchor", "middle")
-	      .text("LGBTQ+ in Games")
+	      .text("LGBTQ+ Identities in Games")
 	      .attr("class","title")
 	      ;		    
 
@@ -215,9 +224,10 @@ function dsBarChartBasics() {
 		var margin = {top: 30, right: 5, bottom: 20, left: 50},
 		width = 500 - margin.left - margin.right,
 	   	height = 250 - margin.top - margin.bottom,
-		colorBar = d3.scale.ordinal().range(["#800080", "#001a98", "#06bf00", "#e3ff00", "#ee9c00", "#d40606"]),
+		colorBar = d3.scale.ordinal().range(["#73078e", "#0048ff", "#18800d", "#ffde00", "#fd8e00", "#e21a00"]),
 		barPadding = 1
 		;
+			
 		
 		return {
 			margin : margin, 
@@ -335,8 +345,8 @@ function dsBarChart() {
 						   		return (i * (width / firstDatasetBarChart.length)) + ((width / firstDatasetBarChart.length - barPadding) / 2);
 						   })
 		  .attr("y", 15)
-		  .attr("class", "xAxis")
-		  //.attr("style", "font-size: 12; font-family: Helvetica, sans-serif")
+		  .attr("class", "barbase")
+		  //.attr("style", "font-size: 8pt; font-family: Helvetica, sans-serif; font-weight:bold; text-transform:uppercase;")
 		  ;			
 	 
 	// Title
@@ -346,7 +356,7 @@ function dsBarChart() {
 		.attr("y", 15)
 		.attr("class","title")				
 		.attr("text-anchor", "middle")
-		.text("LGBTQ+ in Games Across the time")
+		.text("LGBTQ+ representation in different game genres")
 		;
 }
 
@@ -428,7 +438,7 @@ function updateBarChart(group, colorChosen) {
 			.attr("y", 15)
 			.attr("class","title")				
 			.attr("text-anchor", "middle")
-			.text(group + " representativiness across the genres")
+			.text(group + " representation in different game genres")
 		;
 }
 
@@ -682,7 +692,7 @@ function datasetLineChartChosen(group) {
 
 function dsLineChartBasics() {
 
-	var margin = {top: 20, right: 10, bottom: 0, left: 50},
+	var margin = {top: 40, right: 10, bottom: 20, left: 50},
 	    width = 500 - margin.left - margin.right,
 	    height = 150 - margin.top - margin.bottom
 	    ;

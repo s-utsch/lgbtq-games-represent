@@ -32,21 +32,21 @@ var data = [
 ];
 
 var colors = {
-"Lesbian":         "#da4480"
-,"Gay":    "#5ab449"
-,"Bisexual":    "#7f5acd"
-,"Trans":        "#aab740"
-,"Non-binary": "#ce58c0"
-,"Non-conforming":        "#50a26e"
+ "Gay":"#0033ff"
+,"Lesbian": "#660099"
+,"Bisexual":"#cc0000"
+,"Non-conforming":"#ff9900"
+,"Trans": "#ffcc00"
+,"Non-binary": "#009933"
 };
 
 var sortOrder =[
-"Bisexual"
-,"Gay"
+ "Gay"
 ,"Lesbian"
-,"Non-binary"
+,"Bisexual"
 ,"Non-conforming"
 ,"Trans"
+,"Non-binary"
 ];
 
 function sort(a,b){ return d3.ascending(sortOrder.indexOf(a),sortOrder.indexOf(b)); }
@@ -61,7 +61,7 @@ var ch = viz.ch().data(data)
 	  .labelPadding(.03)
       .fill(function(d){ return colors[d];});
 
-var width=1200, height=1100;
+var width=1250, height=1100;
 
 var svg = d3.select("body").append("svg").attr("height",height).attr("width",width);
 
